@@ -19,8 +19,8 @@ def repeat_words(num, word):
     return num * word
 
 @app.errorhandler(404)
-def page_not_found(err):
-    return render_template('Sorry! No response. Try again.'), 404
+def page_not_found(e):
+    return render_template("hello_world.html")
 
 if __name__ == "__main__":
     app.run(debug = True)

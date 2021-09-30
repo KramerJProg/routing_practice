@@ -18,9 +18,13 @@ def say_name(name):
 def repeat_words(num, word):
     return num * word
 
+@app.route('/hello_world')
+def hello_again():
+    return render_template("hello_world.html")
+
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("hello_world.html")
+    return render_template("error.html")
 
 if __name__ == "__main__":
     app.run(debug = True)

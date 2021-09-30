@@ -22,6 +22,10 @@ def repeat_words(num, word):
 def hello_again():
     return render_template("hello_world.html")
 
+@app.route('/hello_world/<name_from_python>/<int:num>')
+def hello_name(name_from_python, num):
+    return render_template("hello_world.html", name_to_html = name_from_python, num = num)
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("error.html")
